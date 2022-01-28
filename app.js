@@ -5,14 +5,13 @@ const users = require('./data.js')
 const {addUser,updateUser,deleteUser} = require('./functions.js')
 
 /// add middleware
-app.use(express.static('./public'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json())
 
 /// create server
 // login homepage
 app.get('/', (req,res) => {
-    res.status(200);
+    res.status(200).send('<h1> Home Page </h1>');
 })
 
 // all users
